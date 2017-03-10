@@ -24,10 +24,7 @@ def paired_euclidean_distances(X, Y):
     """
     return row_norms(X - Y)
 
-# Helper functions - distance
-PAIRWISE_DISTANCE_FUNCTIONS = {
-    'euclidean': paired_euclidean_distances
-}
+
 
 def euclidean_distances(X, Y=None, squared=False):
     """
@@ -83,6 +80,10 @@ def pairwise_distances(X,Y = None,metric = "euclidean",n_jobs = 1, **kwds):
     return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
 
 
+# Helper functions - distance
+PAIRWISE_DISTANCE_FUNCTIONS = {
+    'euclidean': euclidean_distances
+}
 
     
     

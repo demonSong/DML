@@ -1,8 +1,11 @@
 import numpy as np
+
+from ..base import ClassifierMixin
 from ..preprocessing import LabelEncoder
+from learn.metric.pairwise import pairwise_distances
 
 
-class NearestCentroid(object):
+class NearestCentroid(ClassifierMixin):
     def __init__(self,metric='euclidean'):
         self.metric = metric
     
@@ -24,5 +27,8 @@ class NearestCentroid(object):
             # 欧几里德距离计算
             self.centroids_[cur_class] = X[center_mask].mean(axis = 0) #计算每个标签对应的每个特征的均值
         return self
-        
+    
+    def predict(self,X):
+        return self.classes_[pairwise_distances(
+            X,self.centroids_,metric=self.metric).argmin(axis = 1)] # axis = 0 针对矩阵的维度 axis = n 表示第n维
         
