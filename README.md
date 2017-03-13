@@ -1,6 +1,2 @@
-# 目录结构
-
-## ./learn/datasets/data 所有测试数据
-
-## Step 1. KNN核心算法 classify
-
+# **sklearn 婧愮爜鍒嗘瀽绯诲垪**
+## **sklearn 婧愮爜鍒嗘瀽绯诲垪锛歯eighbors(1)**
