@@ -18,7 +18,3 @@ def load_hellen_appointment(return_X_y=False):
         return returnMat,classLabelVector
 
 
-# classlabelvector,returnmat = load_hellen_appointment(True)
-# print(classlabelvector,returnmat)
-
-
